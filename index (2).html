@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <link rel='icon' type='image/x-icon' href="/icon.png" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta content='Dictionary App' property='og:title' />
+      <meta content='Search for the meaning, synonym, and antonym of a word' property='og:description'  />
+     <meta content='/' property='og:url' />
+       <meta property='og:site_name' content='Dictionary'>
+      <meta content='/icon.png' property='og:image' />
+      <meta content='#2f3136'  name='theme-color'/>
+ 
+    
+    <title>Dictionary</title>
+   <link href="style.css" rel="stylesheet" type="text/css" />
+   
+
+
+</head>
+
+<body>
+
+    <header> 
+        <h1><img id="logo" src="/icon.png"> Dictionary</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a> | <a href="#" onclick="about()">About</a>
+    </nav>
+
+         <div class="search">
+             <form name="word" onsubmit="searchword()" action="#">
+        <input id="boxsearch" type="text" placeholder="Search for a word"  value="" required> <button id='buttonsearch' onclick="searchword()">🔍</button> </form>
+          </div>
+
+
+<div class="letters"> 
+     <div class="explorewords" onclick="alert('Tap the letters!')"> <strong> Explore Words </strong> </div>
+
+    <a href="#A" onclick="explore('A')"> A </a> &nbsp
+    <a href="#B" onclick="explore('B')"> B </a>&nbsp
+    <a href="#C" onclick="explore('C')"> C </a> &nbsp
+    <a href="#D" onclick="explore('D')"> D </a>&nbsp
+    <a href="#E" onclick="explore('E')"> E </a>&nbsp
+    <a href="#F" onclick="explore('F')"> F </a> &nbsp
+    <a href="#G" onclick="explore('G')"> G </a>&nbsp
+    <a href="#H" onclick="explore('H')"> H </a>&nbsp
+    <a href="#I" onclick="explore('I')"> I </a> &nbsp
+    <a href="#J" onclick="explore('J')"> J </a>&nbsp
+    <a href="#K" onclick="explore('K')"> K </a>&nbsp
+    <a href="#L" onclick="explore('L')"> L </a> &nbsp
+    <a href="#M" onclick="explore('M')"> M </a>&nbsp
+    <a href="#N" onclick="explore('N')"> N </a>&nbsp
+    <a href="#O" onclick="explore('O')"> O </a> &nbsp
+    <a href="#P" onclick="explore('P')"> P </a>&nbsp
+    <a href="#Q" onclick="explore('Q')"> Q </a>&nbsp
+    <a href="#R" onclick="explore('R')"> R </a> &nbsp
+    <a href="#S" onclick="explore('S')"> S </a>&nbsp
+    <a href="#T" onclick="explore('T')"> T </a>&nbsp
+    <a href="#U" onclick="explore('U')"> U </a> &nbsp
+    <a href="#V" onclick="explore('V')"> V </a>&nbsp
+    <a href="#W" onclick="explore('W')"> W </a>&nbsp
+    <a href="#X" onclick="explore('X')"> X </a> &nbsp
+    <a href="#Y" onclick="explore('Y')"> Y </a>&nbsp
+    <a href="#Z" onclick="explore('Z')"> Z </a>&nbsp
+
+
+</div>
+  <div class="scrollbar" id="scrollbar">Click the image to load all the words! Loading may take a while<img src="/icon.png" style="width: 100%;" onclick="explore('open')">
+  </div>
+
+
+    
+    
+
+  <script src="script.js"></script>
+</body>
+</html>
