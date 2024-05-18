@@ -92,11 +92,12 @@ function dictionary(word){
     }
 
     for (var pos in partOfSpeech) {
+       if (!content.includes(pos.toUpperCase())){
       content += "\n" + pos.toUpperCase() + "\n";
       for (var definition of partOfSpeech[pos]) {
         content += "- " + definition + "\n";
       }
-    }
+    }}
 
 
 
