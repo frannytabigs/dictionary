@@ -133,7 +133,7 @@ if (conditions) {
 
 alert("Loading\nThis may take a while");
 
-var contents = httpGet("/allwords.html");
+var contents = httpGet("/dictonary/allwords.html");
 
   var oldElement = document.getElementById("scrollbar");
 
