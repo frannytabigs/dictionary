@@ -133,7 +133,7 @@ if (conditions) {
 
 alert("Loading\nThis may take a while");
 
-var contents = httpGet("/dictonary/allwords.html");
+var contents = "<iframe src='/dictonary/allwords.html' style='width:100%;height:100%' class='scrollbar'></iframe>";
 
   var oldElement = document.getElementById("scrollbar");
 
