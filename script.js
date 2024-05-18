@@ -54,7 +54,7 @@ function dictionary(word){
         synonyms.push(...definition.synonyms);
         antonyms.push(...definition.antonyms);
         partOfSpeech[meaning.partOfSpeech].push(currentDefinition);
-        examples.push(definition.example || "");
+        examples.push(definition.example);
       }
     }
 
