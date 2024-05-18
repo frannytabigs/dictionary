@@ -82,7 +82,7 @@ function dictionary(word){
 
     let count = 0;
     for (var example of examples) {
-      if (example) {
+      if (example && !content.includes(example)) {
         if (count == 0) {
           content += "\nExamples:\n";
         }
