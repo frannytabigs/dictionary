@@ -111,7 +111,7 @@ function dictionary(word){
 function searchword(){
     var word = document.getElementById("boxsearch").value;
     if (word != ""){
-       var contents = dictionary(word);
+       try{var contents = dictionary(word);}catch(error){var contents = "Word not found! <br>";}
       var oldElement = document.getElementById("scrollbar");
         oldElement.innerHTML = contents;
     }
