@@ -104,7 +104,7 @@ function dictionary(word){
   }
 
 
-  
+  console.log(partOfSpeech);
   console.log(content);
   return content.replace(/\n/g,"<br>");
 }
