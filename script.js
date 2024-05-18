@@ -47,7 +47,8 @@ function dictionary(word){
       if (!partOfSpeech[meaning.partOfSpeech]) {
         partOfSpeech[meaning.partOfSpeech] = [];
       }
-
+      synonyms.push(...meaning.synonyms);
+      antonyms.push(...meaning.antonyms);
       for (var definition of meaning.definitions) {
         var currentDefinition = definition.definition;
         synonyms.push(...definition.synonyms);
