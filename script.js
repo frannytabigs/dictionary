@@ -156,7 +156,7 @@ function seewords(){
 
 function allwords(){
    setTimeout(function() {
-     const largeText = httpGet("/allwords.html");
+     const largeText = httpGet("/dictionary/allwords.html");
     hidescrollbar.innerHTML = largeText;
  ready(); document.getElementById('loadingScreen').style.display = 'none';
 },17896);
