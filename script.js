@@ -19,7 +19,6 @@ return xhr.responseText;
 }
 
 function dictionary(word){
-  
   const api = "https://api.dictionaryapi.dev/api/v2/entries/en/";
   try {var raw = httpGet(api+word);} catch(error){alert("An error occured!\n Try again or contact the owner");alert(error);}
   var jsonResponse = JSON.parse(raw);
@@ -59,7 +58,7 @@ function dictionary(word){
         synonyms.push(...definition.synonyms);
         antonyms.push(...definition.antonyms);
         partOfSpeech[meaning.partOfSpeech].push(currentDefinition);
-        examples.push(definition.example || "");
+        examples.push(definition.example);
       }
     }
 
@@ -98,11 +97,12 @@ function dictionary(word){
     }
 
     for (var pos in partOfSpeech) {
+       if (!content.includes(pos.toUpperCase())){
       content += "\n" + pos.toUpperCase() + "\n";
       for (var definition of partOfSpeech[pos]) {
         content += "- " + definition + "\n";
       }
-    }
+    }}
 
 
 
@@ -110,7 +110,7 @@ function dictionary(word){
   }
 
 
-  console.log(synonyms)
+  console.log(partOfSpeech);
   console.log(content);
   return content.replace(/\n/g,"<br>");
 }
