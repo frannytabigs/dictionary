@@ -3,9 +3,13 @@ form. addEventListener('submit', function(event) {
 event. preventDefault();
 });
 
+
+var boxall = document.getElementById('hidescrollbar');
+var readygo = false;
 function about(){
+  unseewords();
   document.getElementById("scrollbar").innerHTML = "This Application is for the compliance of our subject HCI101 <br> Made by Canoy, Dupay, & Tabigne <br> Submitted to Sir Wilz<br>Source Code: <a style='color: black' href='https://github.com/frannytabigs/dictionary' target='/'>https://github.com/frannytabigs/dictionary (Click Me!)</a><br>Contact Us through <a href='https://www.facebook.com/franny.bolantoy' target='/' style='color: black' >FB! (Click Me!)</a>";
-  
+  stop =  document.getElementById("scrollbar").innerHTML;
 }
 function httpGet(url) {
 const xhr = new XMLHttpRequest();
@@ -15,6 +19,7 @@ return xhr.responseText;
 }
 
 function dictionary(word){
+  
   const api = "https://api.dictionaryapi.dev/api/v2/entries/en/";
   try {var raw = httpGet(api+word);} catch(error){alert("An error occured!\n Try again or contact the owner");alert(error);}
   var jsonResponse = JSON.parse(raw);
@@ -54,7 +59,7 @@ function dictionary(word){
         synonyms.push(...definition.synonyms);
         antonyms.push(...definition.antonyms);
         partOfSpeech[meaning.partOfSpeech].push(currentDefinition);
-        examples.push(definition.example);
+        examples.push(definition.example || "");
       }
     }
 
@@ -93,12 +98,11 @@ function dictionary(word){
     }
 
     for (var pos in partOfSpeech) {
-       if (!content.includes(pos.toUpperCase())){
       content += "\n" + pos.toUpperCase() + "\n";
       for (var definition of partOfSpeech[pos]) {
         content += "- " + definition + "\n";
       }
-    }}
+    }
 
 
 
@@ -106,16 +110,22 @@ function dictionary(word){
   }
 
 
-  console.log(partOfSpeech);
+  console.log(synonyms)
   console.log(content);
   return content.replace(/\n/g,"<br>");
 }
+
+
+
 function searchword(){
+  unseewords();
     var word = document.getElementById("boxsearch").value;
     if (word != ""){
        try{var contents = dictionary(word);}catch(error){var contents = "Word not found! <br>";}
       var oldElement = document.getElementById("scrollbar");
+     
         oldElement.innerHTML = contents;
+       stop = contents
     }
   
 
@@ -123,34 +133,42 @@ function searchword(){
 
 
 
-
-async function explore(letter){
-var inner = document.getElementById("scrollbar").innerHTML;
-var conditions = inner.startsWith("Click the image to load all the words! Loading may take a while");
-
-if (conditions) {
-
-
-
-
-alert("Loading\nThis may take a while");
-
-var contents = httpGet("/dictionary/allwords.html");
-
-  var oldElement = document.getElementById("scrollbar");
-
-    oldElement.innerHTML = contents;
-
+function unseewords(){
+  var old = document.getElementById("scrollbar");
+  old.style.display =  'block';
   
-
-  alert("Loaded and Done!\nThanks for waiting!");
-     }
-
-if (letter != 'open') {
-
-  const element = document.getElementById(letter);
-  if (element){element.scrollIntoView();}
-  else {alert("If you want to explore more words, tap the HOME button!")}
+  
 }
 
- }
+function seewords(){
+  
+  if (!readygo){
+    document.getElementById('loadingScreen').style.display = 'flex';
+    alert("The words are still loading please wait!"); 
+    allwords();
+    return;
+  }
+  var old = document.getElementById("scrollbar");
+  boxall.style.display = 'block';
+  old.style.display = 'none';
+}
+
+
+function allwords(){
+   setTimeout(function() {
+     const largeText = httpGet("/allwords.html");
+    hidescrollbar.innerHTML = largeText;
+ ready(); document.getElementById('loadingScreen').style.display = 'none';
+},17896);
+}
+
+function ready(){
+  readygo = true;
+  alert("All the words are now loaded!");
+  seewords();
+}
+
+
+
+
+
