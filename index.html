@@ -14,7 +14,7 @@
  
     
     <title>Dictionary</title>
-   <link href="style.css" rel="stylesheet" type="text/css" />
+   <link href="/dictionary/style.css" rel="stylesheet" type="text/css" />
    
 
 
@@ -27,7 +27,7 @@
     </header>
 
     <nav>
-        <a href="#"  onclick="seewords()">Home</a> | <a href="#"  onclick="about()">About</a>
+        <a onclick="seewords()">Home</a> | <a onclick="about()">About</a>
     </nav>
 
          <div class="search">
@@ -37,47 +37,50 @@
 
 
 <div class="letters"> 
-     <div class="explorewords" onclick="seewords()" href="#"><strong> Explore Words </strong> </div>
+     <div class="explorewords" onclick="seewords()"><strong> Explore Words </strong> </div>
 
-    <a href="#A" onclick="seewords()"> A </a> &nbsp
-    <a href="#B" onclick="seewords()"> B </a>&nbsp
-    <a href="#C" onclick="seewords()"> C </a> &nbsp
-    <a href="#D" onclick="seewords()"> D </a>&nbsp
-    <a href="#E" onclick="seewords()"> E </a>&nbsp
-    <a href="#F" onclick="seewords()"> F </a> &nbsp
-    <a href="#G" onclick="seewords()"> G </a>&nbsp
-    <a href="#H" onclick="seewords()"> H </a>&nbsp
-    <a href="#I" onclick="seewords()"> I </a> &nbsp
-    <a href="#J" onclick="seewords()"> J </a>&nbsp
-    <a href="#K" onclick="seewords()"> K </a>&nbsp
-    <a href="#L" onclick="seewords()"> L </a> &nbsp
-    <a href="#M" onclick="seewords()"> M </a>&nbsp
-    <a href="#N" onclick="seewords()"> N </a>&nbsp
-    <a href="#O" onclick="seewords()"> O </a> &nbsp
-    <a href="#P" onclick="seewords()"> P </a>&nbsp
-    <a href="#Q" onclick="seewords()"> Q </a>&nbsp
-    <a href="#R" onclick="seewords()"> R </a> &nbsp
-    <a href="#S" onclick="seewords()"> S </a>&nbsp
-    <a href="#T" onclick="seewords()"> T </a>&nbsp
-    <a href="#U" onclick="seewords()"> U </a> &nbsp
-    <a href="#V" onclick="seewords()"> V </a>&nbsp
-    <a href="#W" onclick="seewords()"> W </a>&nbsp
-    <a href="#X" onclick="seewords()"> X </a> &nbsp
-    <a href="#Y" onclick="seewords()"> Y </a>&nbsp
-    <a href="#Z" onclick="seewords()"> Z </a>&nbsp
+    <a onclick="seewords('A')"> A </a> &nbsp
+    <a onclick="seewords('B')"> B </a>&nbsp
+    <a onclick="seewords('C')"> C </a> &nbsp
+    <a onclick="seewords('D')"> D </a>&nbsp
+    <a onclick="seewords('E')"> E </a>&nbsp
+    <a onclick="seewords('F')"> F </a> &nbsp
+    <a onclick="seewords('G')"> G </a>&nbsp
+    <a onclick="seewords('H')"> H </a>&nbsp
+    <a onclick="seewords('I')"> I </a> &nbsp
+    <a onclick="seewords('J')"> J </a>&nbsp
+    <a onclick="seewords('K')"> K </a>&nbsp
+    <a onclick="seewords('L')"> L </a> &nbsp
+    <a onclick="seewords('M')"> M </a>&nbsp
+    <a onclick="seewords('N')"> N </a>&nbsp
+    <a onclick="seewords('O')"> O </a> &nbsp
+    <a onclick="seewords('P')"> P </a>&nbsp
+    <a onclick="seewords('Q')"> Q </a>&nbsp
+    <a onclick="seewords('R')"> R </a> &nbsp
+    <a onclick="seewords('S')"> S </a>&nbsp
+    <a onclick="seewords('T')"> T </a>&nbsp
+    <a onclick="seewords('U')"> U </a> &nbsp
+    <a onclick="seewords('V')"> V </a>&nbsp
+    <a onclick="seewords('W')"> W </a>&nbsp
+    <a onclick="seewords('X')"> X </a> &nbsp
+    <a onclick="seewords('Y')"> Y </a>&nbsp
+    <a onclick="seewords('Z')"> Z </a>&nbsp
 
 
 </div>
-      <div id="loadingScreen"> Words are loading please wait!</div>
-  <div class="scrollbar" id="scrollbar">Tap Explore Words or Search for a word!
+     
+    
+  <div class="scrollbar" id="scrollbar">
+   <a onclick="seewords()" style="color: black;"> TAP SEE WORDS OR SEARCH A WORD TO START!
+   </a>
   </div>
-    
-     <div class="scrollbar" id="hidescrollbar">
+      <div class="scrollbar" id="hidescrollbar">
+        
+
       </div>
-
     
     
 
-  <script src="script.js"></script>
+  <script src="/dictionary/script.js"></script>
 </body>
 </html>
