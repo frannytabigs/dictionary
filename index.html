@@ -27,17 +27,17 @@
     </header>
 
     <nav>
-        <a onclick="seewords()">Home</a> | <a onclick="about()">About</a>
+        <a onclick="seewords('A')">Home</a> | <a onclick="about()">About</a>
     </nav>
 
          <div class="search">
-             <form name="word" onsubmit="searchword()" action="#">
+             <form name="word" onsubmit="searchword()">
         <input id="boxsearch" type="text" placeholder="Search for a word"  value="" required> <button id='buttonsearch' onclick="searchword()">🔍</button> </form>
           </div>
 
 
 <div class="letters"> 
-     <div class="explorewords" onclick="seewords()"><strong> Explore Words </strong> </div>
+     <div class="explorewords" onclick="seewords('A')"><strong> Explore Words </strong> </div>
 
     <a onclick="seewords('A')"> A </a> &nbsp
     <a onclick="seewords('B')"> B </a>&nbsp
@@ -71,7 +71,7 @@
      
     
   <div class="scrollbar" id="scrollbar">
-   <a onclick="seewords()" style="color: black;"> TAP SEE WORDS OR SEARCH A WORD TO START!
+   <a onclick="seewords('A')" style="color: black;"> TAP SEE WORDS OR SEARCH A WORD TO START!
    </a>
   </div>
       <div class="scrollbar" id="hidescrollbar">
