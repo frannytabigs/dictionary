@@ -139,7 +139,7 @@ function seewords(id){
   }
   
   var html =   document.getElementById('hidescrollbar');
-  var text = '<iframe src="/dictionary/' + id + ".html style="width: 100%;height: 100%;" id="frame"></iframe>';
+  var text = '<iframe src="/dictionary/' + id + '.html style="width: 100%;height: 100%;" id="frame"></iframe>';
   if (!html.innerHTML.startsWith(text)){html.innerHTML = text;unsee()}
   var show = document.getElementById('scrollbar');
   show.style.display = 'none';
